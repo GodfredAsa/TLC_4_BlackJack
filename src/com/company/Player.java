@@ -8,9 +8,9 @@ public class Player {
     private boolean status;
     private List<Card> dealtHand = new ArrayList<>();
 
-    public Player(String name, boolean status, List<Card> dealtHand) {
+    public Player(String name, List<Card> dealtHand) {
         this.name = name;
-        this.status = status;
+        this.status = true;
         this.dealtHand = dealtHand;
     }
 
@@ -21,6 +21,13 @@ public class Player {
 //    public void setName(String name) {
 //        this.name = name;
 //    }
+
+    public int getHandTotal(){
+        return this.dealtHand.stream()
+                .map(Card::getCardValue)
+                .reduce(0, Integer::sum);
+    }
+
 
     public boolean isStatus() {
         return status;
@@ -37,4 +44,16 @@ public class Player {
     public void setDealtHand(List<Card> dealtHand) {
         this.dealtHand = dealtHand;
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
