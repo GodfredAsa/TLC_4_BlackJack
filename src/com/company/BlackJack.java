@@ -1,33 +1,51 @@
 package com.company;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.ArrayList;
+//import org.w3c.dom.ls.LSOutput;
+//
+//import java.util.ArrayList;
+//import java.util.List;
 import java.util.List;
 import java.util.Scanner;
 
 public class BlackJack {
-    static Scanner scanner = new Scanner(System.in);
+//    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         Deck deck = new Deck();
-
         deck.createDeck();
 
+//        System.out.println(deck);
+        System.out.println("Number of Cards: "+ deck.nCards());
 
+//
         deck.shuffledDeckOfCards();
-        System.out.println("----------------");
-        System.out.println(deck);
-        System.out.println("----------------");
-
-        System.out.println("**********************");
+//        System.out.println("----------------");
+        System.out.println("Shuffled number of Cards: "+deck.nCards());
+//        System.out.println("----------------");
+//
+//        System.out.println("**********************");
+        deck.sendCards();
+        deck.sendCards();
         deck.sendCards();
 
-        System.out.println("**********************");
+        List<Card> cardList = deck.sendCards();
+        System.out.println( "Send Cards: "+ cardList);
+
+        Player p1 = new Player("A",cardList );
+
+        System.out.println("Dealt hand: "+ p1.getDealtHand().size());
 
 
-        System.out.println(deck);
+
+        System.out.println("after sending of Cards: "+deck.nCards());
+////
+//        System.out.println("**********************");
+//
+//
+//        System.out.println(deck);
+//
+//        System.out.println(deck.nCards());
 
 
 

@@ -13,7 +13,7 @@ public class DeckTest {
     public void createDeckTest() {
         Deck deck  = new Deck();
         deck.createDeck();
-        assertEquals(52,deck.nOfCards());
+        assertEquals(52,deck.nCards());
     }
 
 

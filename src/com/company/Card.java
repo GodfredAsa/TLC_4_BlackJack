@@ -35,6 +35,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return suit + "- " + suitvalue+ " [" +cardValue+ "]" + "\n";
+        return  "\n" + suit + "- " + suitvalue+ " [" +cardValue+ "]" ;
     }
 }
