@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 
 public class Deck {
@@ -27,22 +26,22 @@ public class Deck {
     }
 
 
-//    Calculate Card Points
-    public int totalCardPoint(List<Card> playerCards){
-        return playerCards.stream()
-                .mapToInt(Card::getCardValue)
-                .sum();
-    }
+
 
     //Sends single card
-    public Card sendSingleCards(){
-   return  deckOfCards.remove(0);
-
+    public Card singleCard(){
+        return  deckOfCards.remove(0);
     }
 
 // Sending Cards
     public List<Card> sendCards(){
-        return List.of(sendSingleCards(),sendSingleCards());
+        ArrayList<Card> ourList = new ArrayList<>();
+
+        ourList.add(deckOfCards.remove(0));
+        ourList.add(deckOfCards.remove(1));
+
+        return ourList;
+//        return List.of(singleCard(), singleCard());
     }
 
 
