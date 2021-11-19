@@ -26,12 +26,6 @@ public class Deck {
         }
     }
 
-// lists of card Scores
-    public List<Integer> cardScore(){
-       return deckOfCards.stream()
-               .map(Card::getCardValue)
-               .collect(Collectors.toList());
-    }
 
 //    Calculate Card Points
     public int totalCardPoint(List<Card> playerCards){
@@ -41,23 +35,14 @@ public class Deck {
     }
 
     //Sends single card
-    public List<Card> sendSingleCards(){
-        List<Card> singleCard =  new ArrayList<>();
-        for(int i=0; i<1; i++){
-            singleCard.add(deckOfCards.get(i));
-            deckOfCards.remove(deckOfCards.get(i));
-        }
-        return singleCard;
+    public Card sendSingleCards(){
+   return  deckOfCards.remove(0);
+
     }
 
 // Sending Cards
     public List<Card> sendCards(){
-        List<Card> givenCards =  new ArrayList<>();
-        for(int i=0; i<2; i++){
-           givenCards.add(deckOfCards.get(i));
-           deckOfCards.remove(deckOfCards.get(i));
-        }
-        return givenCards;
+        return List.of(sendSingleCards(),sendSingleCards());
     }
 
 

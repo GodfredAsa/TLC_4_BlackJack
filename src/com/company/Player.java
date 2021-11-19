@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
     private String name;
     private boolean status;
-    private List<Card> dealtHand = new ArrayList<>();
+    private List<Card> dealtHand;
 
     public Player(String name, List<Card> dealtHand) {
         this.name = name;
