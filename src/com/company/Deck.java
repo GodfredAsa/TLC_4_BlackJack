@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class Deck {
@@ -25,9 +26,21 @@ public class Deck {
         }
     }
 
+// lists of card Scores
+    public List<Integer> cardScore(){
+       return deckOfCards.stream()
+               .map(Card::getCardValue)
+               .collect(Collectors.toList());
+    }
 
+//    Calculate Card Points
+    public int totalCardPoint(List<Card> playerCards){
+        return playerCards.stream()
+                .mapToInt(s->s.getCardValue())
+                .sum();
+    }
 
-// Do we need to make this function return a list of cards so we can push to our players
+// Sending Cards
     public List<Card> sendCards(){
         List<Card> givenCards =  new ArrayList<>();
         for(int i=0; i<2; i++){

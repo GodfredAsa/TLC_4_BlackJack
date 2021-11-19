@@ -27,19 +27,23 @@ public class BlackJack {
 //        System.out.println("**********************");
         deck.sendCards();
         deck.sendCards();
-        deck.sendCards();
+//        deck.sendCards();
 
         List<Card> cardList = deck.sendCards();
         System.out.println( "Send Cards: "+ cardList);
 
         Player p1 = new Player("A",cardList );
 
-        System.out.println("Dealt hand: "+ p1.getDealtHand().size());
+        System.out.println("Dealt hand: "+ p1.getDealtHand());
+
+//        System.out.println("after sending of Cards: "+deck.nCards());
+
+
+        System.out.println("New New ");
+        System.out.println(deck.totalCardPoint(p1.getDealtHand()));
 
 
 
-        System.out.println("after sending of Cards: "+deck.nCards());
-////
 //        System.out.println("**********************");
 //
 //
