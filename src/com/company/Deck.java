@@ -36,8 +36,18 @@ public class Deck {
 //    Calculate Card Points
     public int totalCardPoint(List<Card> playerCards){
         return playerCards.stream()
-                .mapToInt(s->s.getCardValue())
+                .mapToInt(Card::getCardValue)
                 .sum();
+    }
+
+    //Sends single card
+    public List<Card> sendSingleCards(){
+        List<Card> singleCard =  new ArrayList<>();
+        for(int i=0; i<1; i++){
+            singleCard.add(deckOfCards.get(i));
+            deckOfCards.remove(deckOfCards.get(i));
+        }
+        return singleCard;
     }
 
 // Sending Cards
