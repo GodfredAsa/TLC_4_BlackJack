@@ -2,12 +2,12 @@ package com.company;
 
 public class Card {
     private Suit suit;
-    private Rank suitvalue;
+    private Rank rankValue;
     private int cardValue;
 
-    public Card(Suit suit, Rank suitvalue, int cardValue) {
+    public Card(Suit suit, Rank rankValue, int cardValue) {
         this.suit = suit;
-        this.suitvalue = suitvalue;
+        this.rankValue = rankValue;
         this.cardValue = cardValue;
     }
 
@@ -19,8 +19,8 @@ public class Card {
         this.suit = suit;
     }
 
-    public Rank getSuitvalue() {
-        return suitvalue;
+    public Rank getRankValue() {
+        return rankValue;
     }
 
 
@@ -35,6 +35,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return  "\n" + suit + "- " + suitvalue+ " [" +cardValue+ "]" ;
+        return  "\n" + suit + "- " + rankValue + " [" +cardValue+ "]" ;
     }
 }
